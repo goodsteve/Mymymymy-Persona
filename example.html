@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Mymymymy Persona! - Example</title>
+    <!-- The Mymymymy Persona! client requires jQuery. -->
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+    <!-- Include the Mozilla Persona javascript library. -->
+    <script src="https://login.persona.org/include.js"></script>
+    <!-- Include the Mymymymy Pesona! javascript client class. -->
+    <script type="text/javascript" src="js/MymymymyPersona.class.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        $.ajaxSetup({cache: false , timeout: 10000});
+        // Instantiate and run the Mymymymy Persona! javascript client.
+        mpc = new MymymymyPersonaClient();
+        mpc.run();
+      });
+    </script>
+    <style type="text/css">
+      body {padding: 15px;}
+      button {padding: 5px;}
+      button:hover {cursor: pointer;}
+    </style>
+  </head>
+  <body>
+    <p><a href="index.html">Back to documentation page.</a></p>
+    <br />
+    <div id="personaBar"><img src="img/loading_16.gif" border="0" /></div>
+  </body>
+</html>

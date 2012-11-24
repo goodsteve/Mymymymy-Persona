@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Mymymymy Persona! - An AJAX authentication system built around Mozilla Persona</title>
+    <link type="text/css" href="css/bootstrap.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span2">
+          <!--Sidebar content-->
+        </div>
+        <div class="span10">
+          <br />
+          <div class="row">
+            <div class="span10">
+              <h3><a href="index.html">Mymymymy Persona!</a></h3>
+            </div>
+          </div>
+          <div class="row">
+            <div class="span10">
+              <i>An AJAX authentication system built around <a href="http://www.mozilla.org/en-US/persona/" title="Mozilla Persona Homepage" target="_blank">Mozilla Persona</a>.</i>
+            </div>
+          </div>
+          <br />
+          <div class="row">
+            <div class="span10">
+              Mymymymy Persona! is a client-server AJAX-wrapper that makes it easy incorporate Mozilla Persona into your web project.  If you have any questions feel free to contact me via my <a href="http://www.goodsteve.co/" title="My Blog" target="_blank">blog</a> or <a href="https://github.com/goodsteve" title="My github Account" target="_blank">github account</a>.
+            </div>
+          </div>
+          <br />
+          <div class="row">
+            <div class="span10">
+              <h4>Try it</h4>
+            </div>
+          </div>
+          <br />
+          <div class="row">
+            <div class="span10">
+              <a href="example.html" title="Working Example">Click here to try a working example of Mymymymy Persona!</a>
+            </div>
+          </div>
+          <br />
+          <div class="row">
+            <div class="span10">
+              <h4>Get it</h4>
+            </div>
+          </div>
+          <br />
+          <div class="row">
+            <div class="span10">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Option</th>
+                    <th>Link</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>github</td>
+                    <td><a href="https://github.com/goodsteve/Mymymymy-Persona" target="_blank">https://github.com/goodsteve/Mymymymy-Persona</a></td>
+                  </tr>
+                  <tr>
+                    <td>Source file</td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <br />
+          <div class="row">
+            <div class="span10">
+              <h4>How it works</h4>
+            </div>
+          </div>
+          <br />
+          <div class="row">
+            <div class="span10">
+              The <code>mpc</code> client object interacts with Mozilla Persona's <code>navigator</code> object and sends AJAX form posts to server.php.  The <code>$mps</code> server object processes the client AJAX posts, interfaces with Mozilla Persona's verification service, and sends formatted JSON response packets back to the client.
+            </div>
+          </div>
+          <br />
+          <div class="row">
+            <div class="span10">
+              <h4>System requirements</h4>
+            </div>
+          </div>
+          <br />
+          <div class="row">
+            <div class="span10">
+              The Mymymymy Persona! client code should run in any modern web browser.  At the time of this writing, it's been tested in Firefox 17.0 and Chromium Version 20.0.1132.47 for Ubuntu.
+            </div>
+          </div>
+          <br />
+          <div class="row">
+            <div class="span10">
+              The Mymymymy Persona! server code was written and tested on a CentOS 6 <b>Linux</b> system running <b>Apache 2.2</b> and <b>PHP 5.3.3</b>.
+            </div>
+          </div>
+          <br />
+          <div class="row">
+            <div class="span10">
+              <h4>Client code</h4>
+            </div>
+          </div>
+          <br />
+          <div class="row">
+            <div class="span10">
+              Include the Mymymymy Persona! javascript files in your site's <code>&lt;head&gt;</code> tag (omit the jquery-1.7.2.min.js include if your site already uses jQuery):
+            </div>
+          </div>
+          <div class="row">
+            <div class="span10">
+<pre>&lt;script type="text/javascript" src="js/jquery-1.7.2.min.js"&gt;&lt;/script&gt;
+&lt;script src="https://login.persona.org/include.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="js/MymymymyPersona.class.js"&gt;&lt;/script&gt;</pre>
+            </div>
+          </div>
+          <br />
+          <div class="row">
+            <div class="span10">
+              Add the following code to jQuery's <code>$(function(){// Put mpc code here.});</code> ready event to instantiate and run the MymymymyPersonaClient (mpc) object:
+            </div>
+          </div>
+          <div class="row">
+            <div class="span10">
+<pre>mpc = new MymymymyPersonaClient();
+mpc.run();</pre>
+            </div>
+          </div>
+          <br />
+          <div class="row">
+            <div class="span10">
+              Place the following <code>&lt;div&gt;</code> tag in your HTML source where you'd like the Sign In / Sign Out buttons to appear:
+            </div>
+          </div>
+          <div class="row">
+            <div class="span10">
+<pre>&lt;div id="personaBar"&gt;&lt;/div&gt;</pre>
+            </div>
+          </div>
+          <br />
+          <div class="row">
+            <div class="span10">
+              <h4>Server code</h4>
+            </div>
+          </div>
+          <br />
+          <div class="row">
+            <div class="span10">
+              Include the MymymymyPersona.class.php file:
+            </div>
+          </div>
+          <div class="row">
+            <div class="span10">
+<pre>include_once('lib/MymymymyPersona.class.php');</pre>
+            </div>
+          </div>
+          <br />
+          <div class="row">
+            <div class="span10">
+              Instantiate the MymymymyPersonaServer ($mps) object, and call the $mps->run() function:
+            </div>
+          </div>
+          <div class="row">
+            <div class="span10">
+<pre>$mps  = new MymymymyPersonaServer($_SERVER['SERVER_NAME'], $_SERVER['SERVER_PORT']);
+$mps->run();</pre>
+            </div>
+          </div>
+          <br />
+          <div class="row">
+            <div class="span10">
+              At the end of your PHP script / application, you have the option of calling the $mps->close() function:
+            </div>
+          </div>
+          <div class="row">
+            <div class="span10">
+<pre>$mps->close();</pre>
+            </div>
+          </div>
+          <br />
+          <div class="row">
+            <div class="span10">
+              <h4>Why Mozilla Persona?</h4>
+            </div>
+          </div>
+          <br />
+          <div class="row">
+            <div class="span10">
+              <blockquote>
+                <p>
+                  <i>"Persona is an open, distributed, web-scale identity system that replaces per-site passwords. It addresses the usability and privacy-related shortcomings of systems like OpenID without resorting to centralized infrastructure like Facebook Connect."</i></p><br />
+                <small><a href="https://developer.mozilla.org/en-US/docs/Persona/Why_Persona" title="Why Persona" target="_blank">https://developer.mozilla.org/en-US/docs/Persona/Why_Persona</a></small>
+              </blockquote>
+            </div>
+          </div>
+          <br />
+          <div class="row">
+            <div class="span10">
+              <a href="https://developer.mozilla.org/en-US/docs/Persona" target="_blank">Click here to view the Persona MDN homepage</a>.
+            </div>
+          </div>
+          <br />
+          <div class="row">
+            <div class="span10">
+              If you're new to federated single sign on (SSO) systems, here are a few links to help get you up to speed: <a href="http://en.wikipedia.org/wiki/Federated_identity" title="Federated identity" target="_blank">Federated identity</a>, <a href="http://en.wikipedia.org/wiki/Federated_identity_management" target="_blank">Federated identity management</a>, <a href="http://en.wikipedia.org/wiki/Single_sign_on" target="_blank">Single sign on</a>, <a href="http://en.wikipedia.org/wiki/Kerberos_(protocol)" target="_blank">Kerberos protocol</a>, <a href="http://en.wikipedia.org/wiki/Security_Assertion_Markup_Language" target="_blank">SAML</a>.
+            </div>
+          </div>
+          <br />
+          <div class="row">
+            <div class="span10">
+              If you'd like to learn more about Mozilla Persona, a youtube search for the phrase "Mozilla Persona" will yield some informative results:
+            </div>
+          </div>
+          <br />
+          <div class="row">
+            <div class="span10">
+              <!--<iframe width="420" height="315" src="http://www.youtube.com/embed/TFOOkZa6OYo" frameborder="0" allowfullscreen></iframe>
+              <iframe width="420" height="315" src="http://www.youtube.com/embed/iZBTc7iEkQY" frameborder="0" allowfullscreen></iframe>-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
