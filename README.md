@@ -3,7 +3,7 @@ Mymymymy-Persona!
 
 An AJAX authentication system built around Mozilla Persona.
 
-Mymymymy Persona! was designed to easily drop-in to an existing web application.
+Mymymymy Persona! was designed to easily drop-in to existing web applications.
 
 
 Client code
