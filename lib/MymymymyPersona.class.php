@@ -75,7 +75,7 @@ class MymymymyPersonaServer {
       // Failed to verify assertion.
       // Respond by calling the mpc.failure() client function.
       // Send a failure message to the mpc.failure client function.
-      $this->response('failure', array('message' => 'Failed to verify your Mozilla Persona email address.  Please wait a few moments and try again.'));
+      $this->response('failure', get_object_vars($res));
     }
     return null;
   }

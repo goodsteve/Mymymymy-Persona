@@ -1,4 +1,6 @@
 Mymymymy-Persona
 ================
 
-A PHP authentication system built around Mozilla Persona
+An AJAX authentication system built around Mozilla Persona.
+
+
