@@ -41,11 +41,9 @@ function MymymymyPersonaClient() {
 MymymymyPersonaClient.prototype.failure = function(responsePacket) {
   mpc.showSigninButton();
   console.log(responsePacket);
-  /*
   if (typeof(responsePacket['responseData']) !== 'undefined' && responsePacket['responseData'] != null) {
-    $('#' + mpc.personaBarId).append(' ' + responsePacket['responseData'].message);
+    $('#' + mpc.personaBarId).append(' ' + responsePacket['responseData'].reason);
   }
-  */
   return null;
 }
 

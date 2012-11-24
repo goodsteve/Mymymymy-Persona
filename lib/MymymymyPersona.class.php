@@ -16,6 +16,7 @@ class MymymymyPersonaServer {
   private $personaResponse      = null;
   private $personaVerifyStatus  = 'okay';
   private $personaVerifyUrl     = 'https://verifier.login.persona.org/verify';
+  private $protocol             = 'https://';
   private $requestPacket        = array();
   private $requiredFields       = array('login' => array('assertion'));
   private $serverName           = '';
@@ -172,7 +173,10 @@ class MymymymyPersonaServer {
   public function __construct($serverName = '', $serverPort = '') {
     $this->serverName = $serverName;
     $this->serverPort = $serverPort;
-    $this->audience   = 'https://' . $this->serverName . ':' . $this->serverPort;
+    if ($serverPort == 80) {
+      $this->protocol = 'http://';
+    }
+    $this->audience   = $this->protocol . $this->serverName . ':' . $this->serverPort;
     return null;
   }
   
